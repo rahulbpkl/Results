@@ -1,0 +1,2280 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAST source code scanning summary</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js"></script>
+<link href="css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<!-- INCLUDES -->
+<link rel="stylesheet" href="css/bootstrap-table-expandable.css">
+<script src="js/bootstrap-table-expandable.js"></script>
+<style>
+h2 {color: #7c795d; font-family: 'Trocchi', serif; font-size: 45px; font-weight: normal; line-height: 48px; margin: 0; text-align: center;   }
+table.repo_table {
+color:#fff;
+font-family:Helvetica,Arial,sans-serif;
+border-collapse: collapse;
+padding:0 3px;
+border-radius: 5px;
+margin: 25px auto;
+}
+
+table.repo_table td, table.repo_table th {
+height:30px;
+transition:all 1.5s;
+text-align:center;
+padding: 5px 40px;
+border: 2px solid #000;
+width: 200px;
+}
+
+table.repo_table th {
+background:#000;
+font-weight:700;
+}
+
+table.repo_table tr td {
+background:#fff;
+color:#000;
+}
+
+table.repo_table tr td:hover {
+background:#666;
+color:#FFF;
+font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+
+
+<div class="container">
+<br>
+<br>
+<br>
+<br>
+  <h2>RAST Summary</h2>
+
+<!--  <p><strong>Note:</strong> The <strong>data-parent</strong> attribute makes sure that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.</p>
+<p>Demo for <a href="http://www.jankoatwarpspeed.com/post/2009/07/19/Expand-table-rows-with-jQuery-jExpand-plugin.aspx">Expand table rows with jQuery - jExpand plugin</a></p> -->
+
+<table class="repo_table">
+    <thead>
+        <tr>
+            <th>Rule Name</th>
+            <th>Total Violations</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/DCL00-J.+Prevent+class+initialization+cycles" target="_blank"> DCL00J</a></td>
+<td>0</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/DCL01-J.+Do+not+reuse+public+identifiers+from+the+Java+Standard+Library" target="_blank"> DCL01-J</a></td>
+<td>0</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/DCL02-J.+Do+not+modify+the+collection%27s+elements+during+an+enhanced+for+statement" target="_blank"> DCL02-J</a></td>
+<td>1</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/EXP02-J.+Do+not+use+the+Object.equals%28%29+method+to+compare+two+arrays" target="_blank"> EXP02-J</a></td>
+<td>0</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/ERR02-J.+Prevent+exceptions+while+logging+data" target="_blank"> ERR02-J</a></td>
+<td>0</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/ERR04-J.+Do+not+complete+abruptly+from+a+finally+block" target="_blank"> ERR04-J</a></td>
+<td>0</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J</a></td>
+<td>23</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/ERR07-J.+Do+not+throw+RuntimeException%2C+Exception%2C+or+Throwable" target="_blank"> ERR07-J</a></td>
+<td>2</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/ERR02-J.+Prevent+exceptions+while+logging+data" target="_blank"> ERR08-J</a></td>
+<td>1</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/FIO02-J.+Detect+and+handle+file-related+errors" target="_blank"> FIO02-J</a></td>
+<td>0</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/LCK01-J.+Do+not+synchronize+on+objects+that+may+be+reused" target="_blank"> LCK01-J</a></td>
+<td>0</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=43647087" target="_blank"> LCK02-J</a></td>
+<td>0</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/MET09-J.+Classes+that+define+an+equals%28%29+method+must+also+define+a+hashCode%28%29+method" target="_blank"> MET09-J</a></td>
+<td>0</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/MSC00-J.+Use+SSLSocket+rather+than+Socket+for+secure+data+exchange" target="_blank"> MSC00-J</a></td>
+<td>0</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/MSC01-J.+Do+not+use+an+empty+infinite+loop" target="_blank"> MSC01-J</a></td>
+<td>0</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers" target="_blank"> MSC02-J</a></td>
+<td>0</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/NUM07-J.+Do+not+attempt+comparisons+with+NaN" target="_blank"> NUM07-J</a></td>
+<td>0</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/NUM09-J.+Do+not+use+floating-point+variables+as+loop+counters" target="_blank"> NUM09-J</a></td>
+<td>0</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/NUM10-J.+Do+not+construct+BigDecimal+objects+from+floating-point+literals" target="_blank"> NUM10-J</a></td>
+<td>0</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/OBJ09-J.+Compare+classes+and+not+class+names" target="_blank"> OBJ09-J</a></td>
+<td>0</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/OBJ10-J.+Do+not+use+public+static+nonfinal+fields" target="_blank"> OBJ10-J</a></td>
+<td>1</td>
+ </tr>
+<tr>
+<td><a href="https://www.securecoding.cert.org/confluence/display/java/SER05-J.+Do+not+serialize+instances+of+inner+classes" target="_blank"> SER05-J</a></td>
+<td>0</td>
+ </tr>
+
+ </tbody>
+    </table> 
+<br>
+<hr noshade>
+<br>
+<h4 style="color:#660000;">Total 10 directories searched and 95 files scanned. Out of the above rules, 28 CERT violations are reported </h4>
+<br>
+<hr noshade>
+<br>
+<div style="text-align:center">  
+     <button class="btn" data-toggle="collapse" data-target="#demo">View Detailed Report</button>
+</div> 
+<div id="demo" class="collapse">
+<h4>Following files have secure coding violations </h4>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+  
+        <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Loc10">AlarmScheduler.java</a>
+        </h4>
+      </div>
+      <div id="Loc10" class="panel-collapse collapse collapse">
+        <div class="panel-body"> <table class="table table-hover table-expandable table-striped">
+    <thead>
+ <p>Location :<a href="/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/alerts/AlarmScheduler.java">/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/alerts/AlarmScheduler.java</a></p>
+
+      <tr>
+        <th>Rule</th>
+        <th>Standard</th>
+        <th>Line number</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+   	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>122</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">122 </span> A method invocation <span style="color: red">instancesCursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>274</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">274 </span> A method invocation <span style="color: red">cursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+<!--$newtableblockattachhere-->
+    </tbody>
+  </table></div>
+      </div>
+    </div>
+
+    
+ 
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Loc13">AlertReceiver.java</a>
+        </h4>
+      </div>
+      <div id="Loc13" class="panel-collapse collapse collapse">
+        <div class="panel-body"> <table class="table table-hover table-expandable table-striped">
+    <thead>
+ <p>Location :<a href="/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/alerts/AlertReceiver.java">/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/alerts/AlertReceiver.java</a></p>
+
+      <tr>
+        <th>Rule</th>
+        <th>Standard</th>
+        <th>Line number</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+   	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>640</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">640 </span> A method invocation <span style="color: red">eventCursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>664</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">664 </span> A method invocation <span style="color: red">attendeesCursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>692</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">692 </span> A method invocation <span style="color: red">eventCursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>719</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">719 </span> A method invocation <span style="color: red">attendeesCursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+<!--$newtableblockattachhere-->
+    </tbody>
+  </table></div>
+      </div>
+    </div>
+
+    
+ 
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Loc14">AlertService.java</a>
+        </h4>
+      </div>
+      <div id="Loc14" class="panel-collapse collapse collapse">
+        <div class="panel-body"> <table class="table table-hover table-expandable table-striped">
+    <thead>
+ <p>Location :<a href="/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/alerts/AlertService.java">/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/alerts/AlertService.java</a></p>
+
+      <tr>
+        <th>Rule</th>
+        <th>Standard</th>
+        <th>Line number</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+   	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>830</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">830 </span> A method invocation <span style="color: red">alertCursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>1081</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">1081 </span> A method invocation <span style="color: red">cursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+<!--$newtableblockattachhere-->
+    </tbody>
+  </table></div>
+      </div>
+    </div>
+
+    
+ 
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Loc17">GlobalDismissManager.java</a>
+        </h4>
+      </div>
+      <div id="Loc17" class="panel-collapse collapse collapse">
+        <div class="panel-body"> <table class="table table-hover table-expandable table-striped">
+    <thead>
+ <p>Location :<a href="/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/alerts/GlobalDismissManager.java">/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/alerts/GlobalDismissManager.java</a></p>
+
+      <tr>
+        <th>Rule</th>
+        <th>Standard</th>
+        <th>Line number</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+   	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>325</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">325 </span> A method invocation <span style="color: red">cursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>437</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">437 </span> A method invocation <span style="color: red">eventCursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>471</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">471 </span> A method invocation <span style="color: red">calendarCursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>514</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">514 </span> A method invocation <span style="color: red">cursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+<!--$newtableblockattachhere-->
+    </tbody>
+  </table></div>
+      </div>
+    </div>
+
+    
+ 
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Loc22">AllInOneActivity.java</a>
+        </h4>
+      </div>
+      <div id="Loc22" class="panel-collapse collapse collapse">
+        <div class="panel-body"> <table class="table table-hover table-expandable table-striped">
+    <thead>
+ <p>Location :<a href="/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/AllInOneActivity.java">/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/AllInOneActivity.java</a></p>
+
+      <tr>
+        <th>Rule</th>
+        <th>Standard</th>
+        <th>Line number</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+   	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>208</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">208 </span> A method invocation <span style="color: red">cursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+<!--$newtableblockattachhere-->
+    </tbody>
+  </table></div>
+      </div>
+    </div>
+
+    
+ 
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Loc28">GoogleCalendarUriIntentFilter.java</a>
+        </h4>
+      </div>
+      <div id="Loc28" class="panel-collapse collapse collapse">
+        <div class="panel-body"> <table class="table table-hover table-expandable table-striped">
+    <thead>
+ <p>Location :<a href="/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/GoogleCalendarUriIntentFilter.java">/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/GoogleCalendarUriIntentFilter.java</a></p>
+
+      <tr>
+        <th>Rule</th>
+        <th>Standard</th>
+        <th>Line number</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+   	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>237</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">237 </span> A method invocation <span style="color: red">eventCursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+<!--$newtableblockattachhere-->
+    </tbody>
+  </table></div>
+      </div>
+    </div>
+
+    
+ 
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Loc50">SelectSyncedCalendarsMultiAccountAdapter.java</a>
+        </h4>
+      </div>
+      <div id="Loc50" class="panel-collapse collapse collapse">
+        <div class="panel-body"> <table class="table table-hover table-expandable table-striped">
+    <thead>
+ <p>Location :<a href="/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/selectcalendars/SelectSyncedCalendarsMultiAccountAdapter.java">/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/selectcalendars/SelectSyncedCalendarsMultiAccountAdapter.java</a></p>
+
+      <tr>
+        <th>Rule</th>
+        <th>Standard</th>
+        <th>Line number</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+   	  <tr>
+		<td>ERR08-J</td>
+		<td>CERT</td>
+		<td>176</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR08-J. Do not catch NullPointerException or any of its ancestors</h4>
+     <p>NullPointerException should be avoided, not caught. Any situation in which NullPointerException is explicitly caught can easily be converted to a null test, and any behavior being carried out in the catch block can easily be moved to the "is null" branch of the conditional.</p>
+        
+        <p>In the given program line number <span style="color: red">176 </span> catch block contains a null pointer exception <span style="color: red">NullPointerException e </span>  </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p>In the Non-compliant Solution rather than checking to see whether the given string is null, the method catches NullPointerException and returns false. </p>
+ <pre><code class="language-java"> 
+public int lengthPlus(String str) {
+  int len = 2;
+  try {
+    len += str.length();
+  }
+  catch (NullPointerException e) {
+    log.info("argument was null");
+  }
+  return len;
+}
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution explicitly checks the String argument for null rather than catching NullPointerException:</p>
+ <pre><code class="language-java"> 
+ public int lengthPlus(String str) {
+  int len = 2;
+
+  if (str != null) {
+    len += str.length();
+  }
+  else {
+    log.info("argument was null");
+  }
+  return len;
+}
+</code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR08-J.+Do+not+catch+NullPointerException+or+any+of+its+ancestors" target="_blank"> ERR08-J. Do not catch NullPointerException or any of its ancestors</a></li>
+          </ul> 
+          </td>  </tr>
+<!--$newtableblockattachhere-->
+    </tbody>
+  </table></div>
+      </div>
+    </div>
+
+    
+ 
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Loc58">CalendarAppWidgetService.java</a>
+        </h4>
+      </div>
+      <div id="Loc58" class="panel-collapse collapse collapse">
+        <div class="panel-body"> <table class="table table-hover table-expandable table-striped">
+    <thead>
+ <p>Location :<a href="/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/widget/CalendarAppWidgetService.java">/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/widget/CalendarAppWidgetService.java</a></p>
+
+      <tr>
+        <th>Rule</th>
+        <th>Standard</th>
+        <th>Line number</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+   	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>505</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">505 </span> A method invocation <span style="color: red">cursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+<!--$newtableblockattachhere-->
+    </tbody>
+  </table></div>
+      </div>
+    </div>
+
+    
+ 
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Loc63">AttendeesView.java</a>
+        </h4>
+      </div>
+      <div id="Loc63" class="panel-collapse collapse collapse">
+        <div class="panel-body"> <table class="table table-hover table-expandable table-striped">
+    <thead>
+ <p>Location :<a href="/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/event/AttendeesView.java">/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/event/AttendeesView.java</a></p>
+
+      <tr>
+        <th>Rule</th>
+        <th>Standard</th>
+        <th>Line number</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+   	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>466</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">466 </span> A method invocation <span style="color: red">cursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+<!--$newtableblockattachhere-->
+    </tbody>
+  </table></div>
+      </div>
+    </div>
+
+    
+ 
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Loc66">EditEventFragment.java</a>
+        </h4>
+      </div>
+      <div id="Loc66" class="panel-collapse collapse collapse">
+        <div class="panel-body"> <table class="table table-hover table-expandable table-striped">
+    <thead>
+ <p>Location :<a href="/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/event/EditEventFragment.java">/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/event/EditEventFragment.java</a></p>
+
+      <tr>
+        <th>Rule</th>
+        <th>Standard</th>
+        <th>Line number</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+   	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>302</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">302 </span> A method invocation <span style="color: red">cursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>322</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">322 </span> A method invocation <span style="color: red">cursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>344</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">344 </span> A method invocation <span style="color: red">cursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+<!--$newtableblockattachhere-->
+    </tbody>
+  </table></div>
+      </div>
+    </div>
+
+    
+ 
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Loc67">EditEventHelper.java</a>
+        </h4>
+      </div>
+      <div id="Loc67" class="panel-collapse collapse collapse">
+        <div class="panel-body"> <table class="table table-hover table-expandable table-striped">
+    <thead>
+ <p>Location :<a href="/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/event/EditEventHelper.java">/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/event/EditEventHelper.java</a></p>
+
+      <tr>
+        <th>Rule</th>
+        <th>Standard</th>
+        <th>Line number</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+   	  <tr>
+		<td>ERR07-J</td>
+		<td>CERT</td>
+		<td>735</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR07-J. Do not throw RuntimeException, Exception, or Throwable</h4>
+     <p>Methods must not throw RuntimeException, Exception, or Throwable. Throwing a RuntimeException can lead to subtle errors; for example, a caller cannot examine the exception to determine why it was thrown and consequently cannot attempt recovery.
+     <p>Methods must not throw RuntimeException, Exception, or Throwable. Throwing a RuntimeException can lead to subtle errors; for example, a caller cannot examine the exception to determine why it was thrown and consequently cannot attempt recovery.
+</p>
+        
+        <p>In the given program line number <span style="color: red">735 </span> throws <span style="color: red">RuntimeException </span> </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> The isCapitalized() method in this noncompliant code example accepts a string and returns true when the string consists of a capital letter followed by lowercase letters. The method also throws a RuntimeException when passed a null string argument. </p>
+ <pre><code class="language-java"> 
+boolean isCapitalized(String s) {
+  if (s == null) {
+    throw new RuntimeException("Null String");
+  }
+  if (s.equals("")) {
+    return true;
+  }
+  String first = s.substring(0, 1);
+  String rest = s.substring(1);
+  return (first.equals(first.toUpperCase()) &&
+          rest.equals(rest.toLowerCase()));
+}
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p> This compliant solution throws NullPointerException to denote the specific exceptional condition</p>
+ <pre><code class="language-java">
+  boolean isCapitalized(String s) {
+  if (s == null) {
+    throw new NullPointerException();
+  }
+  if (s.equals("")) {
+    return true;
+  }
+  String first = s.substring(0, 1);
+  String rest = s.substring(1);
+  return (first.equals(first.toUpperCase()) &&
+          rest.equals(rest.toLowerCase()));
+}</code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR07-J.+Do+not+throw+RuntimeException%2C+Exception%2C+or+Throwable" target="_blank">ERR07-J. Do not throw RuntimeException, Exception, or Throwable</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/397.html" target="_blank">CWE-397</a>, Declaration of Throws for Generic Exception</li>
+          </ul></td>  </tr>
+	  <tr>
+		<td>ERR07-J</td>
+		<td>CERT</td>
+		<td>739</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR07-J. Do not throw RuntimeException, Exception, or Throwable</h4>
+     <p>Methods must not throw RuntimeException, Exception, or Throwable. Throwing a RuntimeException can lead to subtle errors; for example, a caller cannot examine the exception to determine why it was thrown and consequently cannot attempt recovery.
+     <p>Methods must not throw RuntimeException, Exception, or Throwable. Throwing a RuntimeException can lead to subtle errors; for example, a caller cannot examine the exception to determine why it was thrown and consequently cannot attempt recovery.
+</p>
+        
+        <p>In the given program line number <span style="color: red">739 </span> throws <span style="color: red">RuntimeException </span> </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> The isCapitalized() method in this noncompliant code example accepts a string and returns true when the string consists of a capital letter followed by lowercase letters. The method also throws a RuntimeException when passed a null string argument. </p>
+ <pre><code class="language-java"> 
+boolean isCapitalized(String s) {
+  if (s == null) {
+    throw new RuntimeException("Null String");
+  }
+  if (s.equals("")) {
+    return true;
+  }
+  String first = s.substring(0, 1);
+  String rest = s.substring(1);
+  return (first.equals(first.toUpperCase()) &&
+          rest.equals(rest.toLowerCase()));
+}
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p> This compliant solution throws NullPointerException to denote the specific exceptional condition</p>
+ <pre><code class="language-java">
+  boolean isCapitalized(String s) {
+  if (s == null) {
+    throw new NullPointerException();
+  }
+  if (s.equals("")) {
+    return true;
+  }
+  String first = s.substring(0, 1);
+  String rest = s.substring(1);
+  return (first.equals(first.toUpperCase()) &&
+          rest.equals(rest.toLowerCase()));
+}</code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR07-J.+Do+not+throw+RuntimeException%2C+Exception%2C+or+Throwable" target="_blank">ERR07-J. Do not throw RuntimeException, Exception, or Throwable</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/397.html" target="_blank">CWE-397</a>, Declaration of Throws for Generic Exception</li>
+          </ul></td>  </tr>
+<!--$newtableblockattachhere-->
+    </tbody>
+  </table></div>
+      </div>
+    </div>
+
+    
+ 
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Loc71">EventLocationAdapter.java</a>
+        </h4>
+      </div>
+      <div id="Loc71" class="panel-collapse collapse collapse">
+        <div class="panel-body"> <table class="table table-hover table-expandable table-striped">
+    <thead>
+ <p>Location :<a href="/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/event/EventLocationAdapter.java">/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/event/EventLocationAdapter.java</a></p>
+
+      <tr>
+        <th>Rule</th>
+        <th>Standard</th>
+        <th>Line number</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+   	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>414</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">414 </span> A method invocation <span style="color: red">c.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>444</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">444 </span> A method invocation <span style="color: red">c.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+<!--$newtableblockattachhere-->
+    </tbody>
+  </table></div>
+      </div>
+    </div>
+
+    
+ 
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Loc73">Event.java</a>
+        </h4>
+      </div>
+      <div id="Loc73" class="panel-collapse collapse collapse">
+        <div class="panel-body"> <table class="table table-hover table-expandable table-striped">
+    <thead>
+ <p>Location :<a href="/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/Event.java">/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/Event.java</a></p>
+
+      <tr>
+        <th>Rule</th>
+        <th>Standard</th>
+        <th>Line number</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+   	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>283</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">283 </span> A method invocation <span style="color: red">Debug.stopMethodTracing() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+<!--$newtableblockattachhere-->
+    </tbody>
+  </table></div>
+      </div>
+    </div>
+
+    
+ 
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Loc77">EventLoader.java</a>
+        </h4>
+      </div>
+      <div id="Loc77" class="panel-collapse collapse collapse">
+        <div class="panel-body"> <table class="table table-hover table-expandable table-striped">
+    <thead>
+ <p>Location :<a href="/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/EventLoader.java">/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/EventLoader.java</a></p>
+
+      <tr>
+        <th>Rule</th>
+        <th>Standard</th>
+        <th>Line number</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+   	  <tr>
+		<td>ERR05-J</td>
+		<td>CERT</td>
+		<td>113</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>ERR05-J. Do not let checked exceptions escape from a finally block</h4>
+     <p>Methods invoked from within a finally block can throw an exception. Failure to catch and handle such exceptions results in the abrupt termination of the entire try block. Abrupt termination causes any exception thrown in the try block to be lost, preventing any possible recovery method from handling that specific problem. </p>
+        
+        <p>In the given program line number <span style="color: red">113 </span> A method invocation <span style="color: red">cursor.close() </span> is present inside a finally block without a try-catch block </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example contains a finally block that closes the reader object. The programmer incorrectly assumes that the statements in the finally block cannot throw exceptions and consequently fails to appropriately handle any exception that may arise. </p>
+ <pre><code class="language-java"> 
+ try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        reader.close();
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>  This compliant solution encloses the close() method invocation in a try-catch block of its own within the finally block. Consequently, the potential IOException can be handled without allowing it to propagate further.t</p>
+ <pre><code class="language-java"> 
+  try {
+      BufferedReader reader =
+          new BufferedReader(new FileReader(some_file));
+      try {
+        // Do operations
+      } finally {
+        try {
+          reader.close();
+        } catch (IOException ie) {
+          // Forward to handler
+        }
+        // ... Other cleanup code ...
+      }
+    } catch (IOException x) {
+      // Forward to handler
+    }
+    </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/ERR05-J.+Do+not+let+checked+exceptions+escape+from+a+finally+block" target="_blank"> ERR05-J. Do not let checked exceptions escape from a finally block</a></li>
+          </ul> 
+          <h4>Related Guidelines</h4>
+          <ul>
+            <li><a href="http://cwe.mitre.org/data/definitions/703.html" target="_blank"> CWE-703,</a> Improper Check or Handling of Exceptional Conditions</li>
+          <li><a href="http://cwe.mitre.org/data/definitions/248.html" target="_blank"> CWE-248,</a> Uncaught Exception</li>
+          
+          </ul></td>  </tr>
+<!--$newtableblockattachhere-->
+    </tbody>
+  </table></div>
+      </div>
+    </div>
+
+    
+ 
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Loc86">CalendarEventModel.java</a>
+        </h4>
+      </div>
+      <div id="Loc86" class="panel-collapse collapse collapse">
+        <div class="panel-body"> <table class="table table-hover table-expandable table-striped">
+    <thead>
+ <p>Location :<a href="/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/CalendarEventModel.java">/media/rahul/Education/Project/src/M/Sources/packages/apps/Calendar/src/com/android/calendar/CalendarEventModel.java</a></p>
+
+      <tr>
+        <th>Rule</th>
+        <th>Standard</th>
+        <th>Line number</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+   	  <tr>
+		<td>DCL02-J</td>
+		<td>CERT</td>
+		<td>350</td>
+		<td><!--$001violation$001--></td>
+	      </tr>
+      
+
+<tr>
+
+      
+        <td colspan="5">
+ <h4>DCL02-J. Do not modify the collection's elements during an enhanced for statement</h4>
+     <p>Unlike the basic for statement, assignments to the loop variable fail to affect the loop's iteration order over the underlying set of objects. Consequently, an assignment to the loop variable is equivalent to modifying a variable local to the loop body whose initial value is the object referenced by the loop iterator. This modification is not necessarily erroneous but can obscure the loop functionality or indicate a misunderstanding of the underlying implementation of the enhanced for statement.
+Declare all enhanced for statement loop variables final. The final declaration causes Java compilers to flag and reject any assignments made to the loop variable.</p>
+        
+        <p>In the given program line number <span style="color: red">350 </span> code block contains <span style="color: red">email </span> trying to modify the collection's elements during an enhanced for statement </p> 
+        <span style="color: #660000">  <h4>Non-compliant Solution</h4></span>
+<p> This noncompliant code example attempts to process a collection of integers using an enhanced for loop. It further intends to modify one item in the collection for processing: </p>
+ <pre><code class="language-java"> 
+List<Integer> list = Arrays.asList(new Integer[] {13, 14, 15});
+boolean first = true;
+ 
+System.out.println("Processing list...");
+for (Integer i: list) {
+  if (first) {
+    first = false;
+    i = new Integer(99);
+  }
+  System.out.println(" New item: " + i);
+  // Process i
+}
+ 
+System.out.println("Modified list?");
+for (Integer i: list) {
+  System.out.println("List item: " + i);
+}
+ </code></pre>
+<span style="color:#00b33c"><h4>Compliant Solution</h4></span>
+<p>This compliant solution processes the "modified" list but leaves the actual list unchanged:  </p>
+ <pre><code class="language-java"> 
+// ...
+ 
+for (final Integer i: list) {
+  Integer item = i;
+  if (first) {
+    first = false;
+    item = new Integer(99);
+  }
+  System.out.println(" New item: " + item);
+  // Process item
+}
+ 
+// ...
+ </code></pre>
+<h4>Additional information</h4>
+          <ul>
+            <li><a href="https://www.securecoding.cert.org/confluence/display/java/DCL02-J.+Do+not+modify+the+collection%27s+elements+during+an+enhanced+for+statement" target="_blank">DCL02-J. Do not modify the collection's elements during an enhanced for statement </a></li>
+          </ul> 
+           </td>  </tr>
+<!--$newtableblockattachhere-->
+    </tbody>
+  </table></div>
+      </div>
+    </div>
+
+    
+ 
+ <!--$newfileblockattachhere-->
+    
+  </div> 
+</div>
+</div>   
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>
+
